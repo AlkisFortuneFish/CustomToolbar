@@ -54,7 +54,7 @@ This is the easiest way to install and receive updates.
 </details>
 
 <details>
-<summary><strong>1. Install via Git URL</strong></summary>
+<summary><strong>2. Install via Git URL</strong></summary>
 <br>
 This method installs the package directly from the GitHub repository and allows you to easily update to the latest version.
 
@@ -67,7 +67,7 @@ This method installs the package directly from the GitHub repository and allows 
 </details>
 
 <details>
-<summary><strong>2. Install via .unitypackage</strong></summary>
+<summary><strong>3. Install via .unitypackage</strong></summary>
 <br>
 This method is great if you prefer a specific, stable version of the asset.
 
@@ -77,7 +77,7 @@ This method is great if you prefer a specific, stable version of the asset.
 </details>
 
 <details>
-<summary><strong>1. Install via OpenUPM </strong></summary>
+<summary><strong>4. Install via OpenUPM </strong></summary>
 <br>
 This is the easiest way to install the package and keep it up to date.
 
@@ -104,7 +104,7 @@ This is the easiest way to install the package and keep it up to date.
 </details>
 
 <details>
-<summary><strong>3. Manual Installation (from .zip)</strong></summary>
+<summary><strong>5. Manual Installation (from .zip)</strong></summary>
 <br>
 
 1.  Download this repository as a ZIP file by clicking **`Code > Download ZIP`** on the main repository page.

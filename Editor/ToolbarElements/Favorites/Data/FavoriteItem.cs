@@ -18,7 +18,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Data
       {
             public FavoriteItemType itemType;
             public string guid;
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
             public EntityId entityId;
 #else
             public int instanceID;
@@ -47,7 +47,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Data
                         // This is a quick fix for now just to disable warnings in 6.4 that could be annoying
                         // No problem for now as InstanceID is still working but should not work on 6.5 and newer so...
                         // TODO: Convert to EntityID
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                         entityId = go.GetEntityId();
 #elif UNITY_6000_3_OR_NEWER
                         #pragma warning disable CS0618
@@ -68,7 +68,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Data
                               return AssetDatabase.LoadAssetAtPath<Object>(AssetDatabase.GUIDToAssetPath(guid));
                         case FavoriteItemType.GameObject:
                               // TODO: Convert to EntityID
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                               return !IsSceneLoaded() ? null : EditorUtility.EntityIdToObject(entityId);
 #elif UNITY_6000_3_OR_NEWER
                               #pragma warning disable CS0618
@@ -116,7 +116,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Data
                   return itemType switch
                   {
                         FavoriteItemType.Asset => guid == other.guid,
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                         FavoriteItemType.GameObject => entityId == other.entityId && scenePath == other.scenePath,
 #else
                         FavoriteItemType.GameObject => instanceID == other.instanceID && scenePath == other.scenePath,
@@ -130,7 +130,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Data
                   return itemType switch
                   {
                         FavoriteItemType.Asset => HashCode.Combine(itemType, guid),
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                         FavoriteItemType.GameObject => HashCode.Combine(itemType, entityId, scenePath),
 #else
                         FavoriteItemType.GameObject => HashCode.Combine(itemType, instanceID, scenePath),

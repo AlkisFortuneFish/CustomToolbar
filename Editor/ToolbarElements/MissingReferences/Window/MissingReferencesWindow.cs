@@ -211,7 +211,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.MissingReferences.Wind
             {
                   EditorGUILayout.BeginHorizontal();
 
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                   string itemKey = $"{EntityId.ToULong(go.GetEntityId())}_missing_script";
 #elif UNITY_6000_3_OR_NEWER
                   #pragma warning disable CS0618
@@ -245,7 +245,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.MissingReferences.Wind
                   {
                         EditorGUILayout.BeginHorizontal();
 
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                         string itemKey = $"{EntityId.ToULong(go.GetEntityId())}_{info.ComponentName}_{info.FieldName}";
 #elif UNITY_6000_3_OR_NEWER
                         #pragma warning disable CS0618
@@ -310,7 +310,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.MissingReferences.Wind
 
                         if (hasMissingScript)
                         {
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                               _selectedItems.Add($"{EntityId.ToULong(go.GetEntityId())}_missing_script");
 #elif UNITY_6000_3_OR_NEWER
                               #pragma warning disable CS0618
@@ -325,7 +325,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.MissingReferences.Wind
                         {
                               if (!info.IsScriptMissing)
                               {
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                                     _selectedItems.Add($"{EntityId.ToULong(go.GetEntityId())}_{info.ComponentName}_{info.FieldName}");
 #elif UNITY_6000_3_OR_NEWER
                                     #pragma warning disable CS0618
@@ -362,7 +362,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.MissingReferences.Wind
 
                               if (parts.Length >= 3)
                               {
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                                     var entityId = EntityId.FromULong(ulong.Parse(parts[0]));
                                     var go = EditorUtility.EntityIdToObject(entityId) as GameObject;
 #elif UNITY_6000_3_OR_NEWER
@@ -427,7 +427,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.MissingReferences.Wind
                         if (itemKey.Contains("_missing_script", StringComparison.OrdinalIgnoreCase))
                         {
                               string[] parts = itemKey.Split('_');
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
                               var entityId = EntityId.FromULong(ulong.Parse(parts[0]));
                               var go = EditorUtility.EntityIdToObject(entityId) as GameObject;
 #elif UNITY_6000_3_OR_NEWER

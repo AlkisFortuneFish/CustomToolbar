@@ -20,8 +20,10 @@ namespace OpalStudio.CustomToolbar.Editor.Core
             private readonly static List<BaseToolbarElement> LeftElements = new();
             private readonly static List<BaseToolbarElement> RightElements = new();
 
-            static ToolbarInitializer()
-            {
+            static ToolbarInitializer() => EditorApplication.delayCall += Initialize;
+
+            static void Initialize()
+             {
                   ToolbarConfiguration config = ToolbarSettings.Instance;
 
                   CreateElementsFromConfig(config);
